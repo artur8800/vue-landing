@@ -1,20 +1,72 @@
 $small-screen: 767px !default;
 $small-screen-up: 768px !default;
-$medium-screen: 1024px !default;
-$medium-screen-up: 1025px !default;
+$medium-screen: 1023px !default;
+$medium-screen-up: 1024px !default;
 $large-screen: 2560px !default;
 
 
 $small-only: "only screen and  (max-width : #{$medium-screen})" !default;
-$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen-up})" !default;
 $medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
 $large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
+
+
+
+.container {
+  max-width: 1170px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+.container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.clearfix::after { 
+  content: "";
+  clear: both;
+  display: block;
+}
+.row {
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+}
+
+
+.row {
+  .col {
+    box-sizing: border-box;
+    float: left;
+  }
+}
+
+
 
 
 @media #{$small-only} {
     .container {
       width: 100%;
       padding: 0 16px;
+    }
+
+    .row {
+      margin-left: -16px;
+      margin-right: -16px;
+    }
+
+    .row {
+      .col.s12 {
+        width: 100%;
+        margin-left: 15px;
+        margin-right: 15px;
+        left: auto;
+        right: auto;
+      }
     }
 }
 
@@ -23,24 +75,31 @@ $large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
       width: 100%;
       padding: 0 32px;
     }
+
+    .row {
+      margin-left: -15px;
+      margin-right: -15px;
+    }
 }
 
 @media #{$large-and-up} {
     .container {
       width: 100%;
-      padding: 0 60px
+    }
+    .row {
+      margin: 0 -15px;
     }
 }
 
 
-.container {
-    max-width: 1170px;
-    min-width: 320px;
-    margin: 0 auto;
-}
 
-.container:after {
-    content: "";
-    display: table;
-    clear: both;
+@media #{$medium-and-up} {
+  .row {
+    .col.m4 {
+      width: 33.3333333333%;
+      padding: 0 15px;
+      left: auto;
+      right: auto;
+    }
+  }
 }

@@ -1,3 +1,22 @@
+body {
+    background-color: $grey;
+}
 a {
     text-decoration: none;
 }
+div, nav, header, section, main, aside {
+    box-sizing: border-box;
+}
+
+.yellow {
+    background-color: $yellow;
+}
+
+.blue {
+    background-color: $blue;
+}
+
+.grey {
+    background-color: $grey;
+}
+
