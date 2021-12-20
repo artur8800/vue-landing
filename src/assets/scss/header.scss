@@ -1,0 +1,23 @@
+.header__logo {
+    float: left;
+}
+.header__navigation {
+    float: right;
+}
+
+.page__header {
+    padding: 17px 0;
+    border: 1px solid black;
+}
+.header__navigation__list {
+    .header__navigation__item {
+        .header__navigation__link {
+            color: rgba(0, 0, 0, 0.87);
+        }
+
+        @extend .secondary-text;
+        display: block;
+        float: left;
+        margin-left: 30px;
+    }
+}

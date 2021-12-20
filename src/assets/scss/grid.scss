@@ -1,0 +1,46 @@
+$small-screen: 767px !default;
+$small-screen-up: 768px !default;
+$medium-screen: 1024px !default;
+$medium-screen-up: 1025px !default;
+$large-screen: 2560px !default;
+
+
+$small-only: "only screen and  (max-width : #{$medium-screen})" !default;
+$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+$medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
+$large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
+
+
+@media #{$small-only} {
+    .container {
+      width: 100%;
+      padding: 0 16px;
+    }
+}
+
+@media #{$medium-only} {
+    .container {
+      width: 100%;
+      padding: 0 32px;
+    }
+}
+
+@media #{$large-and-up} {
+    .container {
+      width: 100%;
+      padding: 0 60px
+    }
+}
+
+
+.container {
+    max-width: 1170px;
+    min-width: 320px;
+    margin: 0 auto;
+}
+
+.container:after {
+    content: "";
+    display: table;
+    clear: both;
+}

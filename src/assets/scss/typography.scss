@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap&family=Nunito&display=swap');
+
+$nunito: 'Nunito', sans-serif;
+$asap: 'Asap', sans-serif;
+
+.heading-large {
+    font-family: $nunito;
+    font-size: 40px;
+    line-height: 1;
+}
+
+.heading-small {
+    font-family: $nunito;
+    font-size: 22px;
+    line-height: 28px;
+}
+
+.base-text {
+    font-family: $asap;
+    font-size: 16px;
+    line-height: 26px;
+}
+.secondary-text {
+    font-family: $nunito;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+//font-family: 'Nunito', sans-serif;
