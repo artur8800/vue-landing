@@ -20,7 +20,7 @@
 .user__position,
 .user__phone,
 .user__mail {
-    display: inline-block;
+    display: block;
 }
 
 .user__name {
@@ -31,4 +31,8 @@
 .user__phone,
 .user__mail {
     @extend .secondary-text;
+}
+
+.user__item {
+    margin-bottom: 30px;
 }

@@ -2,7 +2,7 @@
   <header class="page__header">
     <div class="container">
       <div class="header__logo">
-        <img class="header__logo" src="../assets/img/Logo.svg" />
+        <img class="header__logo" src="../../assets/img/Logo.svg" />
       </div>
       <nav class="header__navigation">
         <ul class="header__navigation__list">

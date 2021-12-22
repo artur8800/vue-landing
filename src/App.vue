@@ -4,14 +4,16 @@
     <BannerSection />
     <SectionAcquainted />
     <UsersSection />
+    <Form />
   </div>
 </template>
 
 <script>
-import Header from "./components/Header";
-import BannerSection from "./components/BannerSection";
-import SectionAcquainted from "./components/SectionAcquainted";
-import UsersSection from "./components/UsersSection";
+import Header from "./components/views/Header";
+import BannerSection from "./components/views/BannerSection";
+import SectionAcquainted from "./components/views/SectionAcquainted";
+import UsersSection from "./components/views/UsersSection";
+import Form from "./components/views/Form";
 
 export default {
   name: "App",
@@ -20,6 +22,7 @@ export default {
     BannerSection,
     SectionAcquainted,
     UsersSection,
+    Form,
   },
 };
 </script>

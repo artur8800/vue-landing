@@ -30,6 +30,7 @@ $large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
   display: block;
 }
 .row {
+  margin-bottom: 15px;
     &::after {
       content: "";
       display: table;
