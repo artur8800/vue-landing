@@ -25,16 +25,16 @@ export default {
   name: "FormPositions",
   data: () => ({
     checked: 0,
-    positionName: "",
+    positionId: 1,
     positions: [],
   }),
   methods: {
     checkBoxClick(i) {
       this.checked = this.checked === i ? null : i;
-      this.positionName = this.positions[i]["name"];
+      this.positionId = this.positions[i]["id"];
 
-      if (this.positionName) {
-        this.$emit("getPosition", { position: this.positionName });
+      if (this.positionId) {
+        this.$emit("getPosition", { position: this.positionId });
       }
     },
   },
@@ -42,6 +42,7 @@ export default {
     this.positions = await getPositionsList(
       "https://frontend-test-assignment-api.abz.agency/api/v1/positions"
     );
+    this.$emit("getPosition", { position: this.positions[0]["id"] });
   },
 };
 </script>

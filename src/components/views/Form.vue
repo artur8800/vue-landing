@@ -9,10 +9,12 @@
         type="multipart/form-data"
         class="register__form"
         name="register-form"
+        ref="dataForm"
+        @submit.prevent="sendForm"
       >
         <text-input
           type="name"
-          placeholder="Yourr Name"
+          placeholder="Your name"
           @inputChnage="getNameFromInput"
         ></text-input>
         <text-input
@@ -22,21 +24,27 @@
         ></text-input>
         <text-input
           type="phone"
+          ref="phone"
           placeholder="Phone"
           @inputChnage="getPhoneFromInput"
         ></text-input>
 
-        <form-positions @getPosition="getPositionFromInput"></form-positions>
-        <file-upload @fileIsLoad="getFileData" />
+        <form-positions
+          @getPosition="getPositionFromInput"
+          ref="positions"
+        ></form-positions>
+        <file-upload @fileIsLoad="getFileData" ref="upload" />
 
-        <button type="button">Click Me</button>
+        <button type="submit">Click Me</button>
       </form>
     </div>
   </section>
 </template>
 
 <script>
+import $ from "jquery";
 import { getToken } from "../../utils/api";
+import { postUserData } from "../../utils/api";
 import TextInput from "../TextInput";
 import FileUpload from "../FileUpload";
 import FormPositions from "../FormPositions";
@@ -54,8 +62,20 @@ export default {
     applicantPhone: "",
     applicantPosition: "",
     applicantImage: null,
+    formSended: false,
   }),
-
+  watch: {
+    formSended: function () {
+      if (this.formSended) {
+        $(this.$refs.dataForm)
+          .find("input.text-input")
+          .each(function () {
+            $(this).parent().find("label").removeClass("active");
+            $(this).val("");
+          });
+      }
+    },
+  },
   methods: {
     getNameFromInput(data) {
       this.applicantName = data.text;
@@ -72,16 +92,33 @@ export default {
     getPositionFromInput(data) {
       this.applicantPosition = data.position;
     },
-  },
+    async sendForm() {
+      const token = await getToken(
+        "https://frontend-test-assignment-api.abz.agency/api/v1/token"
+      );
 
-  async mounted() {
-    const token = await getToken(
-      "https://frontend-test-assignment-api.abz.agency/api/v1/token"
-    );
-    console.log(token);
-    // this.positions = await getPositionsList(
-    //   "https://frontend-test-assignment-api.abz.agency/api/v1/positions"
-    // );
+      if (token) {
+        console.log(typeof token);
+        const formData = new FormData();
+        formData.append("position_id", this.applicantPosition);
+        formData.append("name", this.applicantName);
+        formData.append("email", this.applicantEmail);
+        formData.append("phone", this.applicantPhone);
+        formData.append("photo", this.applicantImage);
+        console.log(formData);
+        const response = await postUserData(
+          "https://frontend-test-assignment-api.abz.agency/api/v1/users",
+          formData,
+          {
+            headers: {
+              Token: token,
+            },
+          }
+        );
+        this.formSended = true;
+        console.log(response);
+      }
+    },
   },
 };
 </script>

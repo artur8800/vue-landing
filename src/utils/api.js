@@ -28,9 +28,21 @@ export const getToken = async (url) => {
   try {
     const { data } = await axios.get(url);
     const { token, success } = data;
-    if (success) return token;
+    if (success) {
+      return token;
+    }
   } catch (e) {
     console.log(e);
     return null;
+  }
+};
+
+export const postUserData = async (url, params, headers) => {
+  try {
+    const data = await axios.post(url, params, headers);
+    if (data) return data;
+  } catch (e) {
+    console.log(e);
+    return;
   }
 };

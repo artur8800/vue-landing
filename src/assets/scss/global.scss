@@ -20,21 +20,12 @@ div, nav, header, section, main, aside {
     background-color: $grey;
 }
 
-.center-text {
-    text-align: center;
+.error-text {
+    color: $error;
 }
 
-.text-input {
-    box-sizing: border-box;
-    border: 1px solid #D0CFCF;
-    background-color: unset;
-    border-radius: 4px;
-    display: block;
-    margin: 0 auto 50px auto;
-    width: 100%;
-    height: 52px;
-    padding: 14px 16px;
-    @extend .secondary-text;
+.center-text {
+    text-align: center;
 }
 
 .section__heading {
@@ -47,3 +38,6 @@ div, nav, header, section, main, aside {
     @extend .heading-small;
 }
 
+section.page__form {
+    background-color: $grey;
+}
