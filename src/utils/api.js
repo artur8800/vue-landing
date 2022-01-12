@@ -8,7 +8,7 @@ export const getUsers = async (url, params) => {
     if (success) return users;
   } catch (e) {
     console.log(e);
-    return [];
+    return null;
   }
 };
 
@@ -20,7 +20,7 @@ export const getPositionsList = async (url) => {
     if (success) return positions;
   } catch (e) {
     console.log(e);
-    return [];
+    return null;
   }
 };
 
@@ -38,11 +38,12 @@ export const getToken = async (url) => {
 };
 
 export const postUserData = async (url, params, headers) => {
+  let data;
   try {
-    const data = await axios.post(url, params, headers);
-    if (data) return data;
+    data = await axios.post(url, params, headers);
   } catch (e) {
-    console.log(e);
-    return;
+    console.log("Error post data", e.response);
+    data = e.response;
   }
+  return data;
 };

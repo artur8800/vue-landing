@@ -1,7 +1,62 @@
+
+$primary-color-light: none;
 $banner-bg: #EDECEA;
 $yellow: #F4E041;
 $blue: #00BDD3;
 $grey:  #F8F8F8;
 $grey-text: #7E7E7E;
+$black-trsprnt: rgba(0, 0, 0, .87) !default;
 $error: #CB3D40;
+$header-border: 1px solid #E0E0E0;
 
+//Buttons
+
+$button-border: none !default;
+$button-radius: 80px !default;
+$button-height: 50px !default;
+$button-padding: 0 16px !default;
+$button-disabled-background: #B4B4B4 !default;
+$button-disabled-color: rgba(255, 255, 255, .87) !default;
+$button-font-size: 16px;
+$button-icon-font-size: 10px;
+$button-raised-background: #F4E041;
+$button-raised-color: rgba(0, 0, 0, .87) !default;
+$button-raised-background-hover: #FFE302 !default;
+
+$button-floating-background: $button-raised-background !default;
+
+$button-floating-background-hover: #FFE302 !default;
+$button-floating-large-size: none;
+$button-floating-small-size: none;
+$button-floating-size: none;
+$button-floating-color: none;
+$button-floating-radius: $button-radius;
+$button-large-icon-font-size: $button-icon-font-size;
+$button-flat-color: $button-raised-color;
+$button-flat-disabled-color: #fff;
+$button-large-height: $button-height;
+$button-large-font-size: $button-font-size;
+$button-small-font-size: $button-font-size;
+$button-small-height: $button-height;
+$button-small-icon-font-size: $button-font-size;
+
+
+//Sidenav
+$sidenav-width: 270px;
+$sidenav-bg-color: #fff;
+$sidenav-line-height: 26px;
+$sidenav-font-color: #000;
+$sidenav-font-size: 16px;
+$sidenav-item-height: 40px;
+$sidenav-padding: 8px;
+$primary-color: unset;
+
+//input 
+$input-disabled-color: rgba(0,0,0, .42) !default;
+$input-disabled-solid-color: $input-disabled-color;
+// Radio
+$radio-fill-color: #D0CFCF;
+$radio-empty-color: $radio-fill-color;
+$radio-border: 1px solid $radio-fill-color !default;
+//Preloader
+$spinner-default-color: $blue;

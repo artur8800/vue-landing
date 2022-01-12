@@ -1,14 +1,106 @@
-.button {
-    display: inline-block;
+@import "~materialize-css/sass/components/buttons";
+.btn {
+    position: relative;
+    // display: inline-block;
     width: 148px;
-    line-height: 50px;
-    height: 50px;
-    vertical-align: middle;
-    text-align: center;
-    border-radius: 80px;
-    -webkit-border-radius: 80px;
-    -moz-border-radius: 80px;
-    -ms-border-radius: 80px;
-    -o-border-radius: 80px;
+    text-transform: none;
+    // line-height: 50px;
+    // height: 50px;
+    // vertical-align: middle;
+    // text-align: center;
+    // border-radius: 80px;
+    // -webkit-border-radius: 80px;
+    // -moz-border-radius: 80px;
+    // -ms-border-radius: 80px;
+    // -o-border-radius: 80px;
+    // -webkit-transition: background-color .2s ease-out;
+    // transition: background-color .2s ease-out;
+    // cursor: pointer;
+    // border: none;
     @extend .secondary-text;
 }
+
+    
+  
+    .scale-in-bottom:hover::after {
+        display: block;
+        content: "";
+        position: absolute;
+        margin: 0 auto;
+        border-radius: $button-radius;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 50%;
+        background-color: rgba(165, 69, 69, 0.87);
+        -webkit-transition: all .57s ease-out;
+        transition: all .57s ease-out;
+        -webkit-border-radius: $button-radius;
+        -moz-border-radius: $button-radius;
+        -ms-border-radius: $button-radius;
+        -o-border-radius: $button-radius;
+        animation: wave 1s;
+        -webkit-animation: wave 0.2s;
+}
+
+
+
+.hb-fill-middle2-rev::before {
+    position: absolute;
+    content: "";
+    background: rgb(255, 255, 255);
+    transition-duration: 0.3s;
+    z-index: -1;
+    inset: 0px 0px auto auto;
+    width: 50%;
+    height: 100%;
+    opacity: 1;
+} 
+
+
+.hb-fill-middle2-rev:hover::before {
+    width: 0px;
+    height: 100%;
+    opacity: 1;
+} 
+
+
+.hb-fill-middle2-rev {
+    transition: color 0.3s ease 0s, background 0s ease 0.3s;
+} 
+
+
+.hb-fill-middle2-rev:hover {
+    background: #7e7e7e80;
+    transition: color 0.3s ease 0.3s, background 0.3s ease 0.3s;
+    -webkit-transition: color 0.3s ease 0.3s, background 0.3s ease 0.3s;
+    -moz-transition: color 0.3s ease 0.3s, background 0.3s ease 0.3s;
+    -ms-transition: color 0.3s ease 0.3s, background 0.3s ease 0.3s;
+    -o-transition: color 0.3s ease 0.3s, background 0.3s ease 0.3s;
+} 
+
+
+.hb-fill-middle2-rev::after {
+    position: absolute;
+    content: "";
+
+    transition-duration: 0.3s;
+    z-index: -1;
+    inset: 0px auto auto 0px;
+    border-radius: $button-radius;
+    width: 50%;
+    height: 100%;
+    opacity: 1;
+    -webkit-border-radius: $button-radius;
+    -moz-border-radius: $button-radius;
+    -ms-border-radius: $button-radius;
+    -o-border-radius: $button-radius;
+} 
+
+
+.hb-fill-middle2-rev:hover::after {
+    width: 0px;
+}
+
+

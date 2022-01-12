@@ -1,9 +1,9 @@
 <template>
   <div class="form__file__upload">
-    <label class="upload__button__label" for="file"
-      ><button @click="onChooseFile" type="button" class="upload__button">
-        Upload
-      </button>
+    <button @click="onChooseFile" type="button" class="upload__button">
+      Upload
+    </button>
+    <label class="upload__button__label" for="file">
       <span v-if="!file">Upload your photo</span>
       <span v-else-if="file">{{ this.file.name }}</span>
     </label>

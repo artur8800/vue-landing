@@ -2,19 +2,18 @@
   <div class="form__positions">
     <p class="form__positions__heading">Select your position</p>
     <label
-      v-for="(position, i) in positions"
+      v-for="position in positions"
       :key="position.id"
       :for="position.id"
-      class="checkbox__label"
+      class="radio__label"
     >
       <input
+        v-model="picked"
         :value="position.id"
-        ref="checkbox"
-        @click="checkBoxClick(i)"
-        :checked="i === checked"
-        type="checkbox"
+        @change="onChange"
+        type="radio"
       />
-      {{ position.name }}
+      <span>{{ position.name }}</span>
     </label>
   </div>
 </template>
@@ -24,25 +23,26 @@ import { getPositionsList } from "../utils/api";
 export default {
   name: "FormPositions",
   data: () => ({
-    checked: 0,
-    positionId: 1,
+    picked: 1,
     positions: [],
   }),
+  computed: {
+    positionId: function () {
+      return this.positions[this.picked - 1]["id"];
+    },
+  },
   methods: {
-    checkBoxClick(i) {
-      this.checked = this.checked === i ? null : i;
-      this.positionId = this.positions[i]["id"];
-
-      if (this.positionId) {
-        this.$emit("getPosition", { position: this.positionId });
-      }
+    onChange() {
+      this.$emit("getPosition", { position: this.positionId });
     },
   },
   async mounted() {
     this.positions = await getPositionsList(
       "https://frontend-test-assignment-api.abz.agency/api/v1/positions"
     );
-    this.$emit("getPosition", { position: this.positions[0]["id"] });
+  },
+  updated() {
+    this.$emit("getPosition", { position: this.positionId });
   },
 };
 </script>

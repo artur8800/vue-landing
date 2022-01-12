@@ -1,0 +1,16 @@
+@media #{$medium-and-down} {
+    .hide-on-med-and-down {
+      display: none;
+    }
+    .burger__menu__icon {
+        display: block;
+    }
+  }
+
+
+  @media #{$large-and-up} {
+    .sidenav,
+    .sidenav-overlay {
+        display: none !important;
+    }
+  }
