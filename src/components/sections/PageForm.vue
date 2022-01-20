@@ -1,10 +1,11 @@
 <template>
   <section id="pageForm" class="page__form">
     <div class="container">
-      <h1 class="section__heading center-text">Register to get a work</h1>
-      <h2 class="section__heading__small center-text">
-        Your personal data is stored according to the Privacy Policy
-      </h2>
+      <page-heading
+        class="center-text"
+        h2="Register to get a work"
+        h3="Your personal data is stored according to the Privacy Policy"
+      ></page-heading>
       <form
         type="multipart/form-data"
         class="register__form"
@@ -40,14 +41,15 @@
           ref="positions"
         ></form-positions>
         <file-upload @fileIsLoad="getFileData" ref="upload" />
-
-        <button
-          class="btn waves-effect"
-          :class="formFieldsReady ? '' : 'disabled'"
-          type="submit"
-        >
-          Click Me
-        </button>
+        <div class="fomr__button center-text">
+          <button
+            class="btn waves-effect"
+            :class="formFieldsReady ? '' : 'disabled'"
+            type="submit"
+          >
+            Sign up
+          </button>
+        </div>
       </form>
     </div>
   </section>
@@ -59,13 +61,15 @@ import { postUserData } from "../../utils/api";
 import TextInput from "../TextInput";
 import FileUpload from "../FileUpload";
 import FormPositions from "../FormPositions";
+import PageHeading from "../PageHeading";
 
 export default {
-  name: "Form",
+  name: "PageForm",
   components: {
     TextInput,
     FileUpload,
     FormPositions,
+    PageHeading,
   },
   data: () => ({
     formFields: {

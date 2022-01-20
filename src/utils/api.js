@@ -3,11 +3,16 @@ import axios from "axios";
 export const getUsers = async (url, params) => {
   try {
     const { data } = await axios.get(url, { params: params });
-    const { success, users } = data;
+    const { success, users, total_pages, page } = data;
 
-    if (success) return users;
+    if (success)
+      return {
+        users,
+        total_pages,
+        page,
+      };
   } catch (e) {
-    console.log(e);
+    console.log("Getting users is failed!", e);
     return null;
   }
 };
@@ -19,7 +24,7 @@ export const getPositionsList = async (url) => {
 
     if (success) return positions;
   } catch (e) {
-    console.log(e);
+    console.log("Getting positions is failed!", e);
     return null;
   }
 };
@@ -32,7 +37,7 @@ export const getToken = async (url) => {
       return token;
     }
   } catch (e) {
-    console.log(e);
+    console.log("Getting token is failed!", e);
     return null;
   }
 };
@@ -42,7 +47,7 @@ export const postUserData = async (url, params, headers) => {
   try {
     data = await axios.post(url, params, headers);
   } catch (e) {
-    console.log("Error post data", e.response);
+    console.log("Form sending is failed!", e.response);
     data = e.response;
   }
   return data;

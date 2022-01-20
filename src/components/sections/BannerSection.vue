@@ -1,41 +1,6 @@
 <template>
   <section class="banner__section">
-    <picture>
-      <source
-        media="(max-width: 360px)"
-        srcset="
-          ../../assets/img/banner/banner_mobile_1x.jpg 1x,
-          ../../assets/img/banner/banner_mobile_2x.jpg 2x
-        "
-      />
-      <source
-        media="(max-width: 768px)"
-        srcset="
-          ../../assets/img/banner/banner_tablet_1x.jpg 1x,
-          ../../assets/img/banner/banner_tablet_2x.jpg 2x
-        "
-      />
-      <source
-        media="(max-width: 1024px)"
-        srcset="
-          ../../assets/img/banner/banner_large_1x.jpg 1x,
-          ../../assets/img/banner/banner_large_2x.jpg 2x
-        "
-      />
-      <source
-        media="(min-width: 1025px)"
-        srcset="
-          ../../assets/img/banner/banner_xlarge_1x.jpg 1x,
-          ../../assets/img/banner/banner_xlarge_2x.jpg 2x
-        "
-      />
-      <img
-        class="banner__image"
-        src="../../assets/img/banner/banner_mobile_1x.jpg"
-        srcset=""
-        alt="Banner image"
-      />
-    </picture>
+    <div class="banner__container"></div>
 
     <div class="banner__caption">
       <div class="container">
@@ -45,20 +10,18 @@
           </h1>
           <p class="banner__text">
             Front-end developers make sure the user sees and interacts with all
-            the necessary elements to ensure conversion. Therefore, responsive
+            the necessary elements to ensure conversion.<span class="hide-on-small"> Therefore, responsive
             design, programming languages and specific frameworks are the
             must-have skillsets to look for when assessing your front-end
-            developers.
+            developers.</span>
           </p>
-          <a href="#" class="button yellow">Sign Up</a>
         </div>
+        <a href="#" class="btn yellow">Sign up</a>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import "../../assets/img/banner/banner_mobile_1x.jpg";
-
 export default { name: "BannerSection" };
 </script>

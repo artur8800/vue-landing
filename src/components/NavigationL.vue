@@ -17,7 +17,7 @@
         <a class="header__navigation__link" href="#">Users</a>
       </li>
       <li class="header__navigation__item">
-        <a class="header__navigation__link" href="#">Sign Up</a>
+        <a class="header__navigation__link" href="#">Sign up</a>
       </li>
     </ul>
   </nav>

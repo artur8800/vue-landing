@@ -6,15 +6,20 @@
 }
 
 .section__acquainted {
-    padding-top: 180px;
+    padding-top: 175px;
+    padding-bottom: 35px;
 
+    .section__heading__small {
+        margin-bottom: 20px
+    }
     .section__text__block {
         float: right;
         text-align: right;
     }
     .page__text {
-        @extend .banner__text;
-        max-width: 680px;
+        @extend .secondary-text;
+        margin-bottom: 32px;
     }
+
 
 }

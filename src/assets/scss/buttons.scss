@@ -4,19 +4,7 @@
     // display: inline-block;
     width: 148px;
     text-transform: none;
-    // line-height: 50px;
-    // height: 50px;
-    // vertical-align: middle;
-    // text-align: center;
-    // border-radius: 80px;
-    // -webkit-border-radius: 80px;
-    // -moz-border-radius: 80px;
-    // -ms-border-radius: 80px;
-    // -o-border-radius: 80px;
-    // -webkit-transition: background-color .2s ease-out;
-    // transition: background-color .2s ease-out;
-    // cursor: pointer;
-    // border: none;
+    box-sizing: border-box;
     @extend .secondary-text;
 }
 

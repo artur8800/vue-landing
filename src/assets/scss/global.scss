@@ -1,3 +1,8 @@
+body, html{
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+}
 body {
     background-color: $grey;
 }
@@ -7,7 +12,13 @@ a {
 div, nav, header, section, main, aside {
     box-sizing: border-box;
 }
-
+img {
+    max-width: 100%;
+    height: auto;
+}
+button {
+    cursor: pointer;
+}
 .z-depth-1, .btn:hover {
     box-shadow: none;
 }
@@ -40,14 +51,21 @@ div, nav, header, section, main, aside {
     text-align: center;
 }
 
+.right-text {
+    text-align: right;
+}
+
 .section__heading {
     margin-top: 15px;
     @extend .heading-large;
 }
 
 .section__heading__small {
-    margin-top: 15px;
+    margin-top: 10px;
     @extend .heading-small;
+}
+.page__heading {
+    margin-bottom: 20px;
 }
 
 section.page__form {
@@ -69,4 +87,12 @@ section.page__form {
 .page-link:hover {
     background: rgba(0, 189, 211, 0.1);
     border-radius: 4px;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.page__form {
+    padding-top: 60px;
 }

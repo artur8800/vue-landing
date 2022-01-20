@@ -1,24 +1,9 @@
 @import "~materialize-css/sass/components/tooltip";
 
 
-.tooltip {
-    padding: 10px 8px;
-    font-size: 1rem;
-    z-index: 2000;
-    background-color: transparent;
-    border-radius: 2px;
-    color: #fff;
-    min-height: 36px;
-    line-height: 120%;
-    opacity: 1;
-    display: block;
-    position: absolute;
-    text-align: center;
-    max-width: calc(100% - 4px);
-    overflow: hidden;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    //visibility: hidden;
-    background-color: #323232;
+.material-tooltip {
+    @extend .secondary-text;
+    padding: 3px 16px;
+    min-height: 32px;
+    line-height: 26px;
 }

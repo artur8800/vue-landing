@@ -3,8 +3,8 @@
     <Header />
     <BannerSection />
     <SectionAcquainted />
-    <UsersSection />
-    <Form @formSended="getFormResponse" />
+    <users-section :needToUpdate="needToUpdate"></users-section>
+    <page-form @formSended="getFormResponse"></page-form>
     <modal-window :responseData="responseData"></modal-window>
   </div>
 </template>
@@ -14,7 +14,7 @@ import Header from "./Header";
 import BannerSection from "./BannerSection";
 import SectionAcquainted from "./SectionAcquainted";
 import UsersSection from "./UsersSection";
-import Form from "./Form";
+import PageForm from "./PageForm";
 import ModalWindow from "../ModalWindow";
 
 export default {
@@ -24,13 +24,24 @@ export default {
     BannerSection,
     SectionAcquainted,
     UsersSection,
-    Form,
+    PageForm,
     ModalWindow,
   },
   data: () => ({
     responseData: null,
     openModalWindow: false,
+    needToUpdate: false,
   }),
+  watch: {
+    responseData: {
+      handler(data) {
+        if (data !== null) {
+          this.needToUpdate = data.success;
+        }
+      },
+      deep: true,
+    },
+  },
   methods: {
     getFormResponse(data) {
       this.responseData = data;
