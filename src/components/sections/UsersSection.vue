@@ -2,11 +2,11 @@
   <section class="user__section">
     <div class="container">
       <page-heading
-      class="center-text"
-      h2="Our cheerful users"
-      h3="The best specialists are shown below"
-    >
-    </page-heading>
+        class="center-text"
+        h2="Our cheerful users"
+        h3="The best specialists are shown below"
+      >
+      </page-heading>
     </div>
     <div class="container">
       <ul v-if="users" class="user__list row">

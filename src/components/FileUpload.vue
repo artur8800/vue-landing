@@ -3,7 +3,12 @@
     <button @click="onChooseFile" type="button" class="upload__button">
       Upload
     </button>
-    <label class="upload__button__label" for="file">
+    <label
+      class="upload__button__label"
+      ref="fileInput"
+      for="file"
+      :class="{ active: file }"
+    >
       <span v-if="!file">Upload your photo</span>
       <span v-else-if="file">{{ this.file.name }}</span>
     </label>
@@ -19,10 +24,23 @@
 <script>
 export default {
   name: "FileUpload",
+  props: {
+    isSend: Boolean,
+  },
   data: () => ({
     file: null,
     imageUrl: String,
   }),
+  watch: {
+    isSend: function () {
+      if (this.isSend) {
+        this.file = null;
+        if (this.$refs.fileInput.classList.contains("active")) {
+          this.$refs.fileInput.classList.remove("active");
+        }
+      }
+    },
+  },
   methods: {
     onChooseFile() {
       this.$refs.fileInput.click();

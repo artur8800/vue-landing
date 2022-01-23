@@ -11,7 +11,7 @@
     />
     <label ref="textInputLabel" :for="type">{{ placeholder }}</label>
     <span
-      v-if="errors && text !== ''"
+      v-if="errorFromReponse && text !== ''"
       class="form__error input-helper-text error-text"
     >
       {{ this.helperText }}
@@ -27,7 +27,7 @@ export default {
     type: String,
     placeholder: String,
     isSend: Boolean,
-    errors: Object,
+    errorFromReponse: Object,
   },
   name: "TextInput",
   data() {
@@ -38,8 +38,8 @@ export default {
   },
   computed: {
     helperText: function () {
-      if (Array.isArray(this.errors[this.type])) {
-        return this.errors[this.type][0];
+      if (Array.isArray(this.errorFromReponse[this.type])) {
+        return this.errorFromReponse[this.type][0];
       } else {
         return null;
       }
@@ -47,7 +47,7 @@ export default {
   },
   watch: {
     err: function () {
-      if (this.errors) {
+      if (this.errorFromReponse) {
         this.err = true;
       }
     },

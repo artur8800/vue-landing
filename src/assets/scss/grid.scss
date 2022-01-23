@@ -19,16 +19,20 @@
     margin-left: -($gutter-width / 2);
     margin-right: -($gutter-width / 2);
 }
-@media #{$extra-large-and-up} {
-  .container {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
+// @media #{$extra-large-and-up} {
+//   .container {
+//     padding-left: 0;
+//     padding-right: 0;
+//   }
+// }
 @media #{$large-and-up} {
   .container {
     width: 100%;
     padding: 0 60px;
+  }
+
+  .header__navigation__item {
+    margin-left: 32px;
   }
 }
 @media #{$medium-only} {

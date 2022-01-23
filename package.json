@@ -17,6 +17,7 @@
     "jquery": "^3.6.0",
     "lodash": "^4.17.21",
     "materialize-css": "^1.0.0-rc.2",
+    "serve": "^13.0.2",
     "validator": "^13.7.0",
     "vue": "^2.6.11",
     "vue-debounce": "^3.0.1",

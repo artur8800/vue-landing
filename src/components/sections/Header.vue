@@ -1,5 +1,9 @@
 <template>
-  <header class="page__header">
+  <header
+    ref="pageHeader"
+    class="page__header"
+    :class="{ sticky: activeScroll }"
+  >
     <div class="container">
       <div class="header__logo">
         <img class="header__logo" src="../../assets/img/Logo.svg" />
@@ -19,6 +23,24 @@ export default {
   components: {
     NavigationL,
     NavigationS,
+  },
+  data: () => ({
+    activeScroll: false,
+  }),
+  methods: {
+    scrollHadle() {
+      this.activeScroll =
+        window.pageYOffset > 100
+          ? true
+          : window.pageYOffset == 0
+          ? false
+          : true;
+    },
+  },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener("scroll", this.scrollHadle);
+    });
   },
 };
 </script>

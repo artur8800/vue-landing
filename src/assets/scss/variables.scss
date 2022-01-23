@@ -51,9 +51,31 @@ $sidenav-item-height: 40px;
 $sidenav-padding: 8px;
 $primary-color: unset;
 
+
 //input 
 $input-disabled-color: rgba(0,0,0, .42) !default;
-$input-disabled-solid-color: $input-disabled-color;
+$input-disabled-solid-color: $blue;
+$input-background: $blue;
+$input-border-color: $blue;
+$dropdown-item-height: 30;
+$input-focus-color: $blue;
+$input-success-color: $blue;
+$input-error-color: $error;
+$placeholder-text-color: #000;
+$input-border: #000;
+$input-height: 3.375rem;
+$input-height: 54px;
+$input-font-size: 20px;
+$input-margin: 0;
+$input-padding: 0;
+$label-font-size: .8rem !default;
+$input-disabled-color: rgba(0,0,0, .42) !default;
+$input-disabled-solid-color: #949494 !default;
+$input-disabled-border: 1px dotted $input-disabled-color !default;
+$input-invalid-border: 1px solid $input-error-color !default;
+$input-icon-size: 2rem;
+$placeholder-text-color: lighten($input-border-color, 20%) !default;
+
 // Radio
 $radio-fill-color: #D0CFCF;
 $radio-empty-color: $radio-fill-color;
@@ -65,7 +87,7 @@ $num-cols:12 !default;
 $gutter-width: 30px;
 $gutter-width-mobile: 16px;
 ///
-$small-screem: 767px !default;
+$small-screen: 767px !default;
 $small-screen-up: 768px !default;
 $medium-screen: 1023px !default;
 $medium-screen-up: 1024px !default;

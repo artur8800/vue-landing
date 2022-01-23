@@ -17,14 +17,14 @@
           type="name"
           placeholder="Your name"
           :isSend="formSended"
-          :errors="validationErrors"
+          :errorFromReponse="validationErrors"
           @inputChnage="getNameFromInput"
         ></text-input>
         <text-input
           type="email"
           placeholder="Email"
           :isSend="formSended"
-          :errors="validationErrors"
+          :errorFromReponse="validationErrors"
           @inputChnage="getEmailFromInput"
         ></text-input>
         <text-input
@@ -32,7 +32,7 @@
           ref="phone"
           placeholder="Phone"
           :isSend="formSended"
-          :errors="validationErrors"
+          :errorFromReponse="validationErrors"
           @inputChnage="getPhoneFromInput"
         ></text-input>
 
@@ -40,7 +40,11 @@
           @getPosition="getPositionFromInput"
           ref="positions"
         ></form-positions>
-        <file-upload @fileIsLoad="getFileData" ref="upload" />
+        <file-upload
+          @fileIsLoad="getFileData"
+          :isSend="formSended"
+          ref="upload"
+        />
         <div class="fomr__button center-text">
           <button
             class="btn waves-effect"
@@ -148,6 +152,7 @@ export default {
             this.formSended = true;
             setTimeout(() => {
               this.formSended = false;
+              this.formFieldsReady = false;
             }, 500);
           }
         }
